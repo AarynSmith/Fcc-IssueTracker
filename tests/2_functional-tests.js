@@ -16,7 +16,6 @@ chai.use(chaiHttp);
 suite('Functional Tests', function() {
   let TicketID;
   // Create a ticket to update
-  console.log('Creating ticket')
   const reqData = {
     issue_title: 'Title',
     issue_text: 'text',
@@ -28,7 +27,6 @@ suite('Functional Tests', function() {
     .end(function(err, res) {
       if (err) console.log(err);
       TicketID = res.body['_id'];
-      console.log("Created TicketID: ", TicketID)
     });
 
   suite('POST /api/issues/{project} => object with issue data', function() {
@@ -172,7 +170,7 @@ suite('Functional Tests', function() {
         .get('/api/issues/test')
         .query({})
         .end(function(err, res) {
-          if (err) console.log("Test -> err:", err)
+          if (err) console.log(err)
           assert.equal(res.status, 200);
           assert.isArray(res.body);
           assert.property(res.body[0], 'issue_title');
@@ -193,7 +191,7 @@ suite('Functional Tests', function() {
         .get('/api/issues/test')
         .query({open: true})
         .end(function(err, res) {
-          if (err) console.log("Test -> err:", err)
+          if (err) console.log(err)
           assert.equal(res.status, 200);
           assert.isArray(res.body);
           res.body.forEach(elem => {
@@ -220,7 +218,7 @@ suite('Functional Tests', function() {
           status_text: "done"
         })
         .end(function(err, res) {
-          if (err) console.log("Test -> err:", err)
+          if (err) console.log(err)
           assert.equal(res.status, 200);
           assert.isArray(res.body);
           res.body.forEach(elem => {
