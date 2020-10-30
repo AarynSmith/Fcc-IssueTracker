@@ -1,0 +1,36 @@
+{
+	"name": "issuetracker",
+	"version": "0.0.1",
+	"description": "Issue Tracker",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js",
+		"test": "NODE_ENV=test nodemon server.js"
+	},
+	"dependencies": {
+		"body-parser": "^1.15.2",
+		"chai": "^3.5.0",
+		"chai-http": "^3.0.0",
+		"cors": "^2.8.1",
+		"express": "^4.17.1",
+		"helmet": "^3.1.0",
+		"mocha": "^3.2.0",
+		"mongodb": "^3.6.1",
+		"zombie": "^5.0.5"
+	},
+	"engines": {
+		"node": "12.*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AarynSmith/Fcc-IssueTracker"
+	},
+	"keywords": [
+		"node",
+		"express"
+	],
+	"license": "MIT",
+	"devDependencies": {
+		"nodemon": "^2.0.6"
+	}
+}
